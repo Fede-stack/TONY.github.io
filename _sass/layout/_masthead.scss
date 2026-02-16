@@ -4,7 +4,7 @@
 
 .masthead {
   position: fixed;
-  background: #2c3e50;
+  background: #2c3e50;  // Blu scuro
   height: fit-content;
   top: 0;
   width: 100%;
@@ -20,16 +20,16 @@
     position: absolute;
     bottom: 0;
     height: 1px;
-    background: var(--global-border-color);
+    background: #2c3e50;  // Stesso colore della barra (o rimuovi la linea)
     width: 100%;
   }
 
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 2.5em 2em;  // Cambia da 0.5em a 1.5em per più altezza
+    padding: 1.5em 1.5em;
     font-family: $sans-serif-narrow;
-    font-size: $type-size-4;  // Aggiungi questa riga per font più grande
+    font-size: $type-size-4;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -41,8 +41,9 @@
 
     a {
       text-decoration: none;
-      font-size: $type-size-5;  // Aggiungi questa riga per link più grandi
-      padding: 0.5em 0;  // Aggiungi padding verticale ai link
+      color: #ffffff;  // Testo bianco
+      font-size: $type-size-5;
+      padding: 0.5em 0;
     }
   }
 }
@@ -58,17 +59,33 @@
 }
 
 .masthead__menu-item {
-  background-color: var(--global-bg-color);
+  background-color: transparent;  // Cambia da var(--global-bg-color) a transparent
   display: block;
   list-style-type: none;
   white-space: nowrap;
-  font-size: $type-size-6;  // Aggiungi questa riga
+  font-size: $type-size-6;
+  
   a {
-    font-size: 18px;  // Aggiungi questa riga - aumenta da default (circa 14-16px)
-    font-weight: 500; // Opzionale: rendi il testo un po' più bold
+    color: #ffffff;  // Testo bianco
+    font-size: 22px;
+    font-weight: 500;
   }
+  
   &--lg {
     padding-right: 2em;
     font-weight: 700;
   }
+}
+
+.masthead__menu-item.selected a {
+  color: #ffffff;  // Testo bianco anche per il selezionato
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;  // Sottolineatura bianca
+  pointer-events: none;
+  cursor: default;
+}
+
+.masthead__menu-item.selected a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
