@@ -27,7 +27,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1.5em 1em;  // Cambia da 0.5em a 1.5em per più altezza
+    padding: 2.5em 2em;  // Cambia da 0.5em a 1.5em per più altezza
     font-family: $sans-serif-narrow;
     font-size: $type-size-4;  // Aggiungi questa riga per font più grande
 
@@ -62,7 +62,7 @@
   display: block;
   list-style-type: none;
   white-space: nowrap;
-  font-size: $type-size-5;  // Aggiungi questa riga
+  font-size: $type-size-6;  // Aggiungi questa riga
 
   &--lg {
     padding-right: 2em;
