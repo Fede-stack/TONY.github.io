@@ -4,7 +4,7 @@
 
 .masthead {
   position: fixed;
-  background: #2c3e50;  // Blu scuro
+  background: #2c3e50 !important;  // Blu scuro
   height: fit-content;
   top: 0;
   width: 100%;
@@ -20,7 +20,7 @@
     position: absolute;
     bottom: 0;
     height: 1px;
-    background: #2c3e50;  // Stesso colore della barra (o rimuovi la linea)
+    background: #2c3e50;
     width: 100%;
   }
 
@@ -30,6 +30,7 @@
     padding: 1.5em 1.5em;
     font-family: $sans-serif-narrow;
     font-size: $type-size-4;
+    background: transparent !important;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
@@ -37,55 +38,81 @@
 
     nav {
       z-index: 10;
+      background: transparent !important;
     }
 
     a {
       text-decoration: none;
-      color: #ffffff;  // Testo bianco
+      color: #ffffff !important;
       font-size: $type-size-5;
       padding: 0.5em 0;
+      background: transparent !important;
     }
   }
 }
 
 .masthead__menu {
+  background: transparent !important;
 
   ul {
     margin: 0;
     padding: 0;
     clear: both;
     list-style-type: none;
+    background: transparent !important;
   }
 }
 
 .masthead__menu-item {
-  background-color: transparent;  // Cambia da var(--global-bg-color) a transparent
+  background-color: transparent !important;
   display: block;
   list-style-type: none;
   white-space: nowrap;
   font-size: $type-size-6;
   
   a {
-    color: #ffffff;  // Testo bianco
+    color: #ffffff !important;
     font-size: 22px;
     font-weight: 500;
+    background: transparent !important;
   }
   
   &--lg {
     padding-right: 2em;
     font-weight: 700;
+    background: transparent !important;
   }
 }
 
 .masthead__menu-item.selected a {
-  color: #ffffff;  // Testo bianco anche per il selezionato
+  color: #ffffff !important;
   font-weight: 700;
-  border-bottom: 2px solid #ffffff;  // Sottolineatura bianca
+  border-bottom: 2px solid #ffffff;
   pointer-events: none;
   cursor: default;
+  background: transparent !important;
 }
 
 .masthead__menu-item.selected a:hover {
-  color: #ffffff;
+  color: #ffffff !important;
   border-bottom: 2px solid #ffffff;
+  background: transparent !important;
+}
+
+// Aggiungi questi per forzare la rimozione del rettangolo bianco
+.greedy-nav {
+  background: transparent !important;
+  
+  .visible-links {
+    background: transparent !important;
+    
+    li {
+      background: transparent !important;
+    }
+    
+    a {
+      color: #ffffff !important;
+      background: transparent !important;
+    }
+  }
 }
